@@ -1,0 +1,8 @@
+{
+  "label": "Middlewares",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Twix comes with some handy and useful middlewares"
+  }
+}

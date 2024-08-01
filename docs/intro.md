@@ -2,46 +2,95 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Twix Router Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **Twix Router** for building HTTP services in Go.
 
 ## Getting Started
 
-Get started by **creating a new site**.
+Get started by **creating a new project**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Or **try the Twix Router** with the basic usage example below.
 
 ### What you'll need
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- [Go](https://golang.org/dl/) version 1.16 or above
 
-## Generate a new site
+## Installation
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
+Install the Twix Router package using `go get`:
 
 ```bash
-npm init docusaurus@latest my-website classic
+go get github.com/farhanmobashir/twix
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+## Usage
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+Here's a basic example of how to use the `twix` router:
 
-## Start your site
+```go
+package main
 
-Run the development server:
+import (
+    "net/http"
+    "github.com/farhanmobashir/twix"
+)
 
-```bash
-cd my-website
-npm run start
+func main() {
+    router := twix.New()
+
+    router.Get("/hello", func(w http.ResponseWriter, r *http.Request) {
+        w.Write([]byte("Hello, World!"))
+    })
+
+    http.ListenAndServe(":8080", router)
+}
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+### Steps
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+1. **Create a new Go project**:
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+   ```bash
+   mkdir my-twix-app
+   cd my-twix-app
+   go mod init my-twix-app
+   ```
+
+2. **Install Twix Router**:
+
+   ```bash
+   go get github.com/farhanmobashir/twix
+   ```
+
+3. **Create a main.go file**:
+
+   ```go
+   package main
+
+   import (
+       "net/http"
+       "github.com/farhanmobashir/twix"
+   )
+
+   func main() {
+       router := twix.New()
+
+       router.Get("/hello", func(w http.ResponseWriter, r *http.Request) {
+           w.Write([]byte("Hello, World!"))
+       })
+
+       http.ListenAndServe(":8080", router)
+   }
+   ```
+
+4. **Run your application**:
+   ```bash
+   go run main.go
+   ```
+
+Open your browser and navigate to `http://localhost:8080/hello` to see your `Hello, World!` message.
+
+Feel free to edit `main.go` and add more routes as needed. The server **reloads automatically** when you make changes and restart it.
+
+That's it! You now have a basic HTTP server running with Twix Router.
