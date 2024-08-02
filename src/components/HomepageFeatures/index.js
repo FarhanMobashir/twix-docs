@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 const FeatureList = [
   {
     title: "Routing",
-    Svg: require("@site/static/img/abacus.svg").default, // Replace with an appropriate image
+    Svg: require("@site/static/img/twix.svg").default, // Replace with an appropriate image
     description: (
       <>
         Efficiently define and manage your routes with Twix. Easily add handlers for different HTTP methods and paths.
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: "Middleware Support",
-    Svg: require("@site/static/img/coffee.svg").default, // Replace with an appropriate image
+    Svg: require("@site/static/img/battery.svg").default, // Replace with an appropriate image
     description: (
       <>
         Enhance your routes with middleware support for functionalities like logging, CORS, and rate limiting.
@@ -24,7 +24,7 @@ const FeatureList = [
   },
   {
     title: "Grouping",
-    Svg: require("@site/static/img/computer.svg").default, // Replace with an appropriate image
+    Svg: require("@site/static/img/group.svg").default, // Replace with an appropriate image
     description: (
       <>
         Organize routes into groups for better structure and middleware management with route prefixes.

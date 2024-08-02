@@ -39,8 +39,8 @@ package main
 
 import (
     "net/http"
-    "github.com/yourusername/twix"
-    "github.com/yourusername/twix/middlewares"
+    "github.com/farhanmobashir/twix"
+    "github.com/farhanmobashir/twix/middlewares"
 )
 
 func main() {

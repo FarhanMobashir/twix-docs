@@ -146,7 +146,7 @@ package main
 
 import (
     "net/http"
-    "github.com/yourusername/twix"
+    "github.com/farhanmobashir/twix"
 )
 
 func main() {
